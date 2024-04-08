@@ -66,6 +66,7 @@ resources:
   source:
     package: jasmine
     scope: myorg
+    package_manager: yarn # accepts `yarn` or `npm`
     registry:
       uri: https://private.registry.domain/some/path
       token: NpmToken.as-seen-in-HOME-.npmrc

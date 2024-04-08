@@ -57,6 +57,10 @@ if [ "$public" = true ]; then
   args=" --access public"
 fi
 
+PACKAGE_MANAGER = $(jq -r '.params.package_manager // "npm"' <<< $payload)
+echo "Installing dependencies..."
+$PACKAGE_MANAGER install
+
 echo "Publishing..."
 npm publish $args \
 > $publish_result_file \
